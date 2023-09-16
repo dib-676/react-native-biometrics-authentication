@@ -1,7 +1,8 @@
 
 # react-native-biometrics-authentication
 
-React native biometrics is a simple bridge to native iOS and Android keystore management.  It allows you to create public private key pairs that are stored in native keystores and protected by biometric authentication.  Those keys can then be retrieved later, after proper authentication, and used to create a cryptographic signature.
+React native biometric authentication is simply extention of react-native-biometrics with Device Passcode Fallback option when Touch ID or Face ID limits. It is a simple bridge to native iOS and Android keystore management. It allows you to create public private key pairs that are stored in native keystores and protected by biometric authentication.  Those keys can then be retrieved later, after proper authentication, and used to create a cryptographic signature.
+
 
 ## React Native Compatibility
 
