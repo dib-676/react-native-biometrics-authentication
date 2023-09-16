@@ -1,6 +1,6 @@
 {
   "name": "react-native-biometrics-authentication",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "summary": "A React Native library for biometrics authentication extended the original react-native-biometrics library.",
   "description": "React Native biometric functionality for signing and encryption with optional fallback passcode option in IOS.",
   "main": "build/cjs/index.js",
