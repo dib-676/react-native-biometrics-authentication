@@ -1,24 +1,25 @@
 
-# react-native-biometrics
+# react-native-biometrics-authentication
 
-React native biometrics is a simple bridge to native iOS and Android keystore management.  It allows you to create public private key pairs that are stored in native keystores and protected by biometric authentication.  Those keys can then be retrieved later, after proper authentication, and used to create a cryptographic signature.
+React native biometric authentication is simply extention of react-native-biometrics with Device Passcode Fallback option when Touch ID or Face ID limits. It is a simple bridge to native iOS and Android keystore management. It allows you to create public private key pairs that are stored in native keystores and protected by biometric authentication.  Those keys can then be retrieved later, after proper authentication, and used to create a cryptographic signature.
+
 
 ## React Native Compatibility
 
-| `react-native-biometrics` version | Required React Native Version |
+| `react-native-biometrics-authentication` version | Required React Native Version |
 |:---------------------------------:|:-----------------------------:|
-| `>= 3.0.0`                        | `>= 0.60`                     |
-| `<= 1.7.0`                        | `<= 0.59.x`                   |
+| `>= 1.0.0`                        | `>= 0.60`                     |
+
 
 ## Getting started
 
 using either Yarn:
 
-`yarn add react-native-biometrics`
+`yarn add react-native-biometrics-authentication`
 
 or npm:
 
-`$ npm install react-native-biometrics --save`
+`$ npm install react-native-biometrics-authentication --save`
 
 ### Install pods
 
@@ -57,7 +58,7 @@ A constant for the touch id sensor type, evaluates to `'TouchID'`
 __Example__
 
 ```js
-import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics'
+import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics-authentication'
 
 const rnBiometrics = new ReactNativeBiometrics()
 
@@ -75,7 +76,7 @@ A constant for the face id sensor type, evaluates to `'FaceID'`
 __Example__
 
 ```js
-import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics'
+import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics-authentication'
 
 const rnBiometrics = new ReactNativeBiometrics()
 
@@ -93,7 +94,7 @@ A constant for generic Biometrics, evaluates to `'Biometrics'`
 __Example__
 
 ```js
-import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics'
+import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics-authentication'
 
 const rnBiometrics = new ReactNativeBiometrics()
 
@@ -116,7 +117,7 @@ __Options Object__
 __Example__
 
 ```js
-import ReactNativeBiometrics from 'react-native-biometrics'
+import ReactNativeBiometrics from 'react-native-biometrics-authentication'
 
 const rnBiometrics = new ReactNativeBiometrics({ allowDeviceCredentials: true })
 
@@ -140,7 +141,7 @@ __Result Object__
 __Example__
 
 ```js
-import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics'
+import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics-authentication'
 
 const rnBiometrics = new ReactNativeBiometrics()
 
@@ -173,7 +174,7 @@ __Result Object__
 __Example__
 
 ```js
-import ReactNativeBiometrics from 'react-native-biometrics'
+import ReactNativeBiometrics from 'react-native-biometrics-authentication'
 
 const rnBiometrics = new ReactNativeBiometrics()
 
@@ -198,7 +199,7 @@ __Result Object__
 __Example__
 
 ```js
-import ReactNativeBiometrics from 'react-native-biometrics'
+import ReactNativeBiometrics from 'react-native-biometrics-authentication'
 
 const rnBiometrics = new ReactNativeBiometrics()
 rnBiometrics.biometricKeysExist()
@@ -226,7 +227,7 @@ __Result Object__
 __Example__
 
 ```js
-import ReactNativeBiometrics from 'react-native-biometrics'
+import ReactNativeBiometrics from 'react-native-biometrics-authentication'
 
 const rnBiometrics = new ReactNativeBiometrics()
 
@@ -267,7 +268,7 @@ __Result Object__
 __Example__
 
 ```js
-import ReactNativeBiometrics from 'react-native-biometrics'
+import ReactNativeBiometrics from 'react-native-biometrics-authentication'
 
 let epochTimeSeconds = Math.round((new Date()).getTime() / 1000).toString()
 let payload = epochTimeSeconds + 'some message'
@@ -312,7 +313,7 @@ __Result Object__
 __Example__
 
 ```js
-import ReactNativeBiometrics from 'react-native-biometrics'
+import ReactNativeBiometrics from 'react-native-biometrics-authentication'
 
 const rnBiometrics = new ReactNativeBiometrics()
 
@@ -330,18 +331,3 @@ rnBiometrics.simplePrompt({promptMessage: 'Confirm fingerprint'})
     console.log('biometrics failed')
   })
 ```
-
-### Troubleshooting
-
-- Because of this library's dependency on `androidx.biometric:biometric:1.0.0` it can cause transitive dependency resolution to change on certain version of React Native and `androidx.swiperefreshlayout` may no longer be able to be resolved.  This can be fixed by adding an explicit dependency on the library in your `android/app/build.gradle`:
-
-    ```
-    dependencies {
-        implementation fileTree(dir: "libs", include: ["*.jar"])
-        implementation "com.facebook.react:react-native:+"  // From node_modules
-        implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0" // temp fix
-        ...
-    }
-    ```
-
-- There is a [known issue](https://stackoverflow.com/questions/56700680/keychain-query-always-returns-errsecitemnotfound-after-upgrading-to-ios-13) on the iOS 13.x simulators where keys generated with access control flags cannot be queried and found properly.  This results in key not found errors in `biometricKeysExist` and `createSignature` on those simulators.  However, it works correctly on actual devices running iOS 13.
