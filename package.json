@@ -21,7 +21,11 @@
     "auth",
     "fingerprint",
     "touch-id",
-    "face-id"
+    "face-id",
+    "react-native-biometrics",
+    "react-native-touch-id",
+    "react-native-keychain",
+    "keychain"
   ],
   "homepage": "https://github.com/dib-676/react-native-biometrics-authentication",
   "contributors": [],
@@ -30,7 +34,7 @@
     "url": "git+https://github.com/dib-676/react-native-biometrics-authentication.git"
   },
   "private": false,
-  "author": "Brandon Hines (https://github.com/dib-676)",
+  "author": "Dibendu Gorai (https://github.com/dib-676)",
   "license": "MIT",
   "peerDependencies": {
     "react-native": ">=0.60.0"
