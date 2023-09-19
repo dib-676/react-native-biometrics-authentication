@@ -1,4 +1,4 @@
-package com.rnbiometrics;
+package com.rnbiometricsauthentication;
 
 import androidx.annotation.NonNull;
 import androidx.biometric.BiometricPrompt;

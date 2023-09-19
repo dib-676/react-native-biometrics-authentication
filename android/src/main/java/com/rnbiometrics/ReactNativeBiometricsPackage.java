@@ -1,4 +1,4 @@
-package com.rnbiometrics;
+package com.rnbiometricsauthentication;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;

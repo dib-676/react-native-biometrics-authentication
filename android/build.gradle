@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 
-description = 'react-native-biometrics'
+description = 'react-native-biometrics-authentication'
 
 buildscript {
     // The Android Gradle plugin is only required when opening the android folder stand-alone.

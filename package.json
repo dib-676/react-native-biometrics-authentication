@@ -34,7 +34,10 @@
     "url": "git+https://github.com/dib-676/react-native-biometrics-authentication.git"
   },
   "private": false,
-  "author": "Dibendu Gorai (https://github.com/dib-676)",
+  "author": {
+    "name": "Dibendu Gorai",
+    "url": "https://github.com/dib-676"
+  },
   "license": "MIT",
   "peerDependencies": {
     "react-native": ">=0.60.0"

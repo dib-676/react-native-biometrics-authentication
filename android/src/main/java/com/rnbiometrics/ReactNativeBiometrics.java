@@ -1,4 +1,4 @@
-package com.rnbiometrics;
+package com.rnbiometricsauthentication;
 
 import android.os.Build;
 import android.security.keystore.KeyGenParameterSpec;

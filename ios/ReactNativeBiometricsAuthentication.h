@@ -6,6 +6,6 @@
 
 #import <React/RCTBridgeModule.h>
 
-@interface ReactNativeBiometrics : NSObject <RCTBridgeModule>
+@interface ReactNativeBiometricsAuthentication : NSObject <RCTBridgeModule>
 
 @end

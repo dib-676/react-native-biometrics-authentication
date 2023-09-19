@@ -1,17 +1,17 @@
 //
-//  ReactNativeBiometrics.m
+//  ReactNativeBiometricsAuthentication.m
 //
-//  Created by Brandon Hines on 4/3/18.
+//  Created by Dibendu Gorai on 14/9/23.
 //
 
-#import "ReactNativeBiometrics.h"
+#import "ReactNativeBiometricsAuthentication.h"
 #import <LocalAuthentication/LocalAuthentication.h>
 #import <Security/Security.h>
 #import <React/RCTConvert.h>
 
-@implementation ReactNativeBiometrics
+@implementation ReactNativeBiometricsAuthentication
 
-RCT_EXPORT_MODULE(ReactNativeBiometrics);
+RCT_EXPORT_MODULE(ReactNativeBiometricsAuthentication);
 
 RCT_EXPORT_METHOD(isSensorAvailable: (NSDictionary *)params resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
   LAContext *context = [[LAContext alloc] init];
